@@ -104,5 +104,8 @@ venv.bak/
 .mypy_cache/
 
 # files with secrets
-demo
+demo*
 .dedynauth
+
+# tmp files
+get-certificate.tmp.sh

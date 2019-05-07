@@ -18,8 +18,9 @@ echo DEDYN_TOKEN=$TOKEN >> .dedynauth
 ./hook.sh
 echo DEDYN_NAME=$DOMAIN >> .dedynauth
 ./hook.sh
-sudo certbot --manual --text --preferred-challenges dns --manual-auth-hook ./hook.sh -d "$DOMAIN" -d "www.$DOMAIN" --dry-run certonly
+certbot --config-dir cb/config --logs-dir cb/logs --work-dir cb/work --manual --text --preferred-challenges dns --manual-auth-hook ./hook.sh -d "$DOMAIN" -d "www.$DOMAIN" certonly
 
 http GET https://desec.io/api/v1/domains/$DOMAIN/rrsets/ Authorization:"Token $TOKEN"
 http DELETE https://desec.io/api/v1/domains/$DOMAIN/ Authorization:"Token $TOKEN"
-rm .dedynauth hook.sh
+openssl x509 -in cb/config/live/$DOMAIN/chain.pem -text -noout
+rm -rf .dedynauth hook.sh cb
