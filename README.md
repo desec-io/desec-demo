@@ -3,9 +3,10 @@ Demo of deSEC's desec-stack hosted on desec.io
 
 To run demos, setup an virtual environment and install the requirements:
 
-    virtualenv -p python3 venv
-    pip install -r requirements.txt
+    python3 -m venv venv
     source venv/bin/activate
+    pip install wheel
+    pip install -r requirements.txt
 
 Basic Demo
 ----
