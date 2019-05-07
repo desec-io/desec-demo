@@ -105,3 +105,4 @@ venv.bak/
 
 # files with secrets
 demo
+.dedynauth
