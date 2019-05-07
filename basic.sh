@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 #doitlive prompt: $
-#doitlive speed: 5
+#doitlive speed: 3
 
 TOKEN=YourTokenString
 http https://desec.io/api/v1/domains/ Authorization:"Token $TOKEN"
