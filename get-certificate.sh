@@ -10,7 +10,7 @@ http https://desec.io/api/v1/domains/ Authorization:"Token $TOKEN"
 http POST https://desec.io/api/v1/domains/ Authorization:"Token $TOKEN" name:='"$DOMAIN"'
 
 curl https://raw.githubusercontent.com/desec-io/certbot-hook/master/hook.sh > hook.sh
-chmod 755 hook.sh
+chmod +x hook.sh
 ./hook.sh
 touch .dedynauth
 ./hook.sh
